@@ -70,7 +70,7 @@ Enterprise-grade trade finance platforms sorted descending by company size (annu
 
 Open-source repositories, DLT frameworks, smart contracts, and developer tooling for trade finance, sorted descending by GitHub star count:
 
-| Project | Stars | Focus &amp; Description | Tech Stack / Architecture |
+| Project | Github_Stars | Focus &amp; Description | Tech Stack / Architecture |
 | :--- | :--- | :--- | :--- |
 | **[Hyperledger Fabric](https://github.com/hyperledger/fabric)** | [![Stars](https://img.shields.io/github/stars/hyperledger/fabric?style=social&color=white)](https://github.com/hyperledger/fabric/stargazers) | 🏢 Enterprise-grade permissioned distributed ledger framework widely used as the core infrastructure for banking trade consortiums. | Go, Docker, Raft, gRPC |
 | **[Corda](https://github.com/corda/corda)** | [![Stars](https://img.shields.io/github/stars/corda/corda?style=social&color=white)](https://github.com/corda/corda/stargazers) | 🏦 Privacy-focused distributed ledger platform specifically engineered for financial agreements, tokenized trade assets, and multi-bank settlements. | Kotlin, Java, JVM |
