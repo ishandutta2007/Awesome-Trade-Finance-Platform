@@ -1,0 +1,188 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#050811" />
+      <stop offset="35%" stop-color="#0a1128" />
+      <stop offset="70%" stop-color="#121b3a" />
+      <stop offset="100%" stop-color="#1c1942" />
+    </linearGradient>
+    
+    <linearGradient id="title-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="40%" stop-color="#818cf8" />
+      <stop offset="80%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#f472b6" />
+    </linearGradient>
+
+    <linearGradient id="card-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="rgba(255, 255, 255, 0.09)" />
+      <stop offset="100%" stop-color="rgba(255, 255, 255, 0.02)" />
+    </linearGradient>
+
+    <linearGradient id="node-cyan" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="100%" stop-color="#0284c7" />
+    </linearGradient>
+
+    <linearGradient id="node-purple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#c084fc" />
+      <stop offset="100%" stop-color="#9333ea" />
+    </linearGradient>
+
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="glow-subtle" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="10" stdDeviation="14" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M 48 0 L 0 0 0 48" fill="none" stroke="rgba(255, 255, 255, 0.035)" stroke-width="1" />
+      <circle cx="48" cy="48" r="1.2" fill="rgba(56, 189, 248, 0.25)" />
+    </pattern>
+  </defs>
+
+  <style>
+    @keyframes pulse-flow {
+      0% { stroke-dashoffset: 240; }
+      100% { stroke-dashoffset: 0; }
+    }
+    @keyframes float-1 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    @keyframes float-2 {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(8px); }
+    }
+    @keyframes pulse-glow {
+      0%, 100% { opacity: 0.35; transform: scale(1); }
+      50% { opacity: 0.9; transform: scale(1.1); }
+    }
+    @keyframes orb-move {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(25px, -15px); }
+    }
+    .flow-line-1 {
+      stroke-dasharray: 10, 14;
+      animation: pulse-flow 5s linear infinite;
+    }
+    .flow-line-2 {
+      stroke-dasharray: 8, 12;
+      animation: pulse-flow 3.5s linear infinite reverse;
+    }
+    .card-float-top {
+      animation: float-1 5s ease-in-out infinite;
+    }
+    .card-float-bottom {
+      animation: float-2 6.5s ease-in-out infinite;
+    }
+    .pulsing-node {
+      transform-origin: center;
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+    .ambient-orb {
+      animation: orb-move 8s ease-in-out infinite;
+    }
+    .font-title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .font-body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      font-weight: 400;
+    }
+  </style>
+
+  <rect width="1200" height="400" rx="16" fill="url(#bg-grad)" />
+  <rect width="1200" height="400" rx="16" fill="url(#grid)" />
+
+  <circle cx="180" cy="120" r="160" fill="#38bdf8" opacity="0.08" filter="url(#glow)" class="ambient-orb" />
+  <circle cx="1060" cy="280" r="180" fill="#818cf8" opacity="0.09" filter="url(#glow)" class="ambient-orb" />
+  <circle cx="620" cy="380" r="140" fill="#c084fc" opacity="0.06" filter="url(#glow)" />
+
+  <g opacity="0.75">
+    <path d="M 80 300 Q 280 200 480 260 T 820 230 T 1140 310" fill="none" stroke="rgba(56, 189, 248, 0.45)" stroke-width="2.5" stroke-linecap="round" class="flow-line-1" />
+    <path d="M 60 190 Q 380 110 720 180 T 1150 150" fill="none" stroke="rgba(129, 140, 248, 0.35)" stroke-width="1.8" stroke-linecap="round" class="flow-line-2" />
+    <path d="M 200 350 Q 560 380 900 320 T 1160 250" fill="none" stroke="rgba(192, 132, 252, 0.3)" stroke-width="1.5" stroke-linecap="round" />
+  </g>
+
+  <g transform="translate(64, 60)">
+    <rect width="250" height="34" rx="17" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.35)" stroke-width="1.2" />
+    <circle cx="18" cy="17" r="5" fill="#38bdf8" class="pulsing-node" />
+    <text x="36" y="22" fill="#38bdf8" class="font-body" font-size="13" font-weight="600" letter-spacing="0.5">🌐 GLOBAL TRADE ECOSYSTEM</text>
+
+    <text x="0" y="86" fill="#ffffff" class="font-title" font-size="44">Awesome Trade Finance</text>
+    <text x="0" y="132" fill="url(#title-grad)" class="font-title" font-size="40">Platforms &amp; Digital Stack</text>
+
+    <text x="0" y="174" fill="#94a3b8" class="font-body" font-size="16">
+      Enterprise SaaS &amp; Open-Source Architecture for Letters of Credit (LCs),
+    </text>
+    <text x="0" y="198" fill="#94a3b8" class="font-body" font-size="16">
+      Bank Guarantees, Supply Chain Finance, e-Bills of Lading &amp; Verifiable Credentials.
+    </text>
+
+    <g transform="translate(0, 230)">
+      <rect x="0" y="0" width="130" height="32" rx="8" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+      <text x="14" y="21" fill="#e2e8f0" class="font-body" font-size="13" font-weight="500">⚡ Digital LCs</text>
+
+      <rect x="142" y="0" width="145" height="32" rx="8" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+      <text x="156" y="21" fill="#e2e8f0" class="font-body" font-size="13" font-weight="500">📜 e-BL / MLETR</text>
+
+      <rect x="299" y="0" width="155" height="32" rx="8" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+      <text x="313" y="21" fill="#e2e8f0" class="font-body" font-size="13" font-weight="500">🔗 Blockchain &amp; DLT</text>
+
+      <rect x="466" y="0" width="150" height="32" rx="8" fill="rgba(255, 255, 255, 0.06)" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1" />
+      <text x="480" y="21" fill="#e2e8f0" class="font-body" font-size="13" font-weight="500">🤖 AI Scrutiny</text>
+    </g>
+  </g>
+
+  <g transform="translate(850, 48)" class="card-float-top" filter="url(#shadow)">
+    <rect width="290" height="142" rx="14" fill="url(#card-grad)" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.5" />
+    
+    <circle cx="36" cy="38" r="17" fill="url(#node-cyan)" opacity="0.25" />
+    <path d="M 30 38 L 35 43 L 43 33" fill="none" stroke="#38bdf8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+    
+    <text x="64" y="35" fill="#ffffff" class="font-title" font-size="16">Enterprise SaaS</text>
+    <text x="64" y="53" fill="#94a3b8" class="font-body" font-size="12">Surecomp • Finastra • Komgo</text>
+    
+    <line x1="20" y1="74" x2="270" y2="74" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+    
+    <text x="20" y="98" fill="#64748b" class="font-body" font-size="11" font-weight="600">MARKET COVERAGE</text>
+    <text x="20" y="122" fill="#34d399" class="font-title" font-size="20">Multi-Billion $</text>
+    <text x="160" y="122" fill="#94a3b8" class="font-body" font-size="12">Volume Digitisaton</text>
+  </g>
+
+  <g transform="translate(820, 212)" class="card-float-bottom" filter="url(#shadow)">
+    <rect width="320" height="142" rx="14" fill="url(#card-grad)" stroke="rgba(255, 255, 255, 0.16)" stroke-width="1.5" />
+    
+    <circle cx="36" cy="38" r="17" fill="url(#node-purple)" opacity="0.25" />
+    <path d="M 30 33 L 36 28 L 42 33 L 36 38 Z M 30 35 L 36 40 L 36 46 L 30 41 Z M 42 35 L 36 40 L 36 46 L 42 41 Z" fill="none" stroke="#c084fc" stroke-width="1.8" stroke-linejoin="round" />
+    
+    <text x="64" y="35" fill="#ffffff" class="font-title" font-size="16">Open-Source DLT &amp; VC</text>
+    <text x="64" y="53" fill="#94a3b8" class="font-body" font-size="12">Hyperledger • Corda • TradeTrust</text>
+    
+    <line x1="20" y1="74" x2="300" y2="74" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1" />
+    
+    <g transform="translate(20, 92)">
+      <circle cx="6" cy="18" r="4" fill="#38bdf8" />
+      <text x="18" y="22" fill="#e2e8f0" class="font-body" font-size="12">Solidity LC Workflows &amp; Verifiers</text>
+      <circle cx="6" cy="36" r="4" fill="#34d399" />
+      <text x="18" y="40" fill="#94a3b8" class="font-body" font-size="11">Decentralized Trade Settlement</text>
+    </g>
+  </g>
+
+  <g fill="#38bdf8" filter="url(#glow-subtle)">
+    <circle cx="480" cy="260" r="4.5" />
+    <circle cx="820" cy="230" r="5" />
+    <circle cx="720" cy="180" r="4" />
+  </g>
+</svg>
